@@ -2,17 +2,23 @@ pipeline {
     agent any
 
     stages {
-        stage ('Compile Stage') {
+        stage ('Description Stage') {
 
             steps {
-                   echo 'This is a minimal pipeline.'
+                    sh '''
+                    echo "PATH = ${PATH}"
+                    echo "M2_HOME = ${M2_HOME}"
+                    echo "MAVEN_HOME=${MAVEN_HOME}"
+                ''' 
             }
         }
 
-        stage ('Testing Stage') {
+        stage ('Compile Stage') {
 
             steps {
-                    echo 'This is a minimal pipeline.'
+                withMaven(maven : '${MAVEN_HOME}') {
+                    sh 'mvn clean compile'
+                }
             }
         }
 
