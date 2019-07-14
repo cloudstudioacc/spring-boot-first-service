@@ -1,31 +1,12 @@
 pipeline {
     agent any
-
+    tools {
+        maven 'apache-maven-3.6.1' 
+    }
     stages {
-        stage ('Compile Stage') {
-
+        stage('Example') {
             steps {
-                withMaven(maven : '/opt/maven/apache-maven-3.6.1') {
-                    sh 'mvn clean compile'
-                }
-            }
-        }
-
-        stage ('Testing Stage') {
-
-            steps {
-                withMaven(maven : '/opt/maven/apache-maven-3.6.1') {
-                    sh 'mvn test'
-                }
-            }
-        }
-
-
-        stage ('Deployment Stage') {
-            steps {
-                withMaven(maven : '/opt/maven/apache-maven-3.6.1') {
-                    sh 'mvn deploy'
-                }
+                sh 'mvn --version'
             }
         }
     }
