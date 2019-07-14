@@ -19,7 +19,10 @@ pipeline {
 
         stage ('Deployment Stage') {
             steps {
-                     echo 'This is a minimal pipeline.'
+                    sh '''
+                    echo "PATH = ${PATH}"
+                    echo "M2_HOME = ${M2_HOME}"
+                ''' 
             }
         }
     }
