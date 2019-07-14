@@ -5,21 +5,21 @@ pipeline {
         stage ('Compile Stage') {
 
             steps {
-                    sh 'mvn --version'
+                   echo 'This is a minimal pipeline.'
             }
         }
 
         stage ('Testing Stage') {
 
             steps {
-                    sh 'mvn --version'
+                    echo 'This is a minimal pipeline.'
             }
         }
 
 
         stage ('Deployment Stage') {
             steps {
-                    sh 'mvn --version'
+                     echo 'This is a minimal pipeline.'
             }
         }
     }
