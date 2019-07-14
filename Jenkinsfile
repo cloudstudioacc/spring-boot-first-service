@@ -5,27 +5,21 @@ pipeline {
         stage ('Compile Stage') {
 
             steps {
-                withMaven(maven : '/Users/yaserarafatmohammad/dev/apache-maven-3.3.9') {
-                    sh 'mvn clean compile'
-                }
+                    sh 'mvn --version'
             }
         }
 
         stage ('Testing Stage') {
 
             steps {
-                withMaven(maven : '/Users/yaserarafatmohammad/dev/apache-maven-3.3.9') {
-                    sh 'mvn test'
-                }
+                    sh 'mvn --version'
             }
         }
 
 
         stage ('Deployment Stage') {
             steps {
-                withMaven(maven : '/Users/yaserarafatmohammad/dev/apache-maven-3.3.9') {
-                    sh 'mvn deploy'
-                }
+                    sh 'mvn --version'
             }
         }
     }
