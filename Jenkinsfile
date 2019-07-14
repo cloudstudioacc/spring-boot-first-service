@@ -16,7 +16,7 @@ pipeline {
         stage ('Compile Stage') {
 
             steps {
-                withMaven(maven : '${MAVEN_HOME}') {
+                withMaven(maven : '/Users/yaserarafatmohammad/dev/apache-maven-3.3.9/bin') {
                     sh 'mvn clean compile'
                 }
             }
